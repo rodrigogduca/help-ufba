@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help UFBA - Calculadora de Média e Faltas | Universidade Federal da Bahia</title>
+  <meta name="description" content="Calcule sua média semestral e controle suas faltas na UFBA. Ferramentas acadêmicas gratuitas para estudantes: calculadora de notas com pesos personalizáveis e simulador de faltas.">
+  <meta name="keywords" content="UFBA, calculadora média, calculadora faltas, passei UFBA, estudante UFBA, nota final, média semestral">
+  <meta name="author" content="Rodrigo Gandarela">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rodrigogduca.github.io/help-ufba/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Help UFBA - Calculadora de Média e Faltas">
+  <meta property="og:description" content="Ferramentas acadêmicas gratuitas para estudantes da UFBA. Calcule sua média e controle suas faltas.">
+  <meta property="og:url" content="https://rodrigogduca.github.io/help-ufba/">
+  <meta property="og:image" content="https://rodrigogduca.github.io/help-ufba/logo.png">
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ufba: {
+              blue: '#003DA5',
+              red: '#C8102E',
+              dark: '#0A1628',
+              card: '#111B2E',
+              border: '#1E2D45',
+              muted: '#8494AD',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-ufba-dark text-white font-sans antialiased min-h-screen">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0A1628]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 text-white no-underline">
+        <img src="logo.png" alt="Help UFBA" class="w-8 h-8 rounded-lg">
+        <span class="font-bold text-lg">Help UFBA</span>
+      </a>
+      <div class="hidden sm:flex items-center gap-6">
+        <a href="#ferramentas" class="text-ufba-muted hover:text-white transition-colors text-sm">Ferramentas</a>
+        <a href="https://sigaa.ufba.br" target="_blank" rel="noopener noreferrer"
+           class="bg-ufba-blue hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+          SIGAA
+        </a>
+      </div>
+      <button id="hamburger" class="sm:hidden text-white p-2" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="fixed inset-0 z-40 bg-ufba-dark/95 backdrop-blur-sm flex flex-col items-center justify-center gap-8 text-xl hidden">
+    <a href="#ferramentas" class="text-white hover:text-ufba-blue transition-colors">Ferramentas</a>
+    <a href="https://sigaa.ufba.br" target="_blank" rel="noopener noreferrer" class="text-white hover:text-ufba-blue transition-colors">SIGAA</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="pt-32 pb-16 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-block bg-ufba-blue/10 border border-ufba-blue/30 text-ufba-blue text-xs font-semibold tracking-wider uppercase px-4 py-1.5 rounded-full mb-6">
+        Ferramentas Acadêmicas
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        Calculadoras do<br>
+        <span class="bg-gradient-to-r from-ufba-blue to-blue-400 bg-clip-text text-transparent">Estudante UFBA</span>
+      </h1>
+      <p class="text-ufba-muted text-lg sm:text-xl max-w-2xl mx-auto mb-10">
+        Ferramentas úteis para acompanhar seu desempenho acadêmico na Universidade Federal da Bahia.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#ferramentas"
+           class="bg-ufba-blue hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-xl transition-colors text-base">
+          Calcular Agora
+        </a>
+        <a href="https://clube-de-programacao.vercel.app/" target="_blank" rel="noopener noreferrer"
+           class="text-ufba-muted hover:text-white border border-ufba-border hover:border-white/30 font-medium px-8 py-3 rounded-xl transition-colors text-base">
+          Site Principal →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6"><hr class="border-ufba-border"></div>
+
+  <!-- FERRAMENTAS -->
+  <section id="ferramentas" class="py-16 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-ufba-blue text-sm font-mono font-medium mb-2">// ferramentas acadêmicas</p>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-3">Calculadoras<br>do estudante</h2>
+      <p class="text-ufba-muted mb-12 max-w-lg">Escolha quantas provas sua disciplina tem e defina o peso de cada uma.</p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- CALCULADORA DE MÉDIA -->
+        <div class="bg-ufba-card border border-ufba-border rounded-2xl overflow-hidden">
+          <div class="p-6 border-b border-ufba-border">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-ufba-blue/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-ufba-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold">Passei UFBA?</h3>
+            </div>
+            <p class="text-ufba-muted text-sm">Calcule sua média semestral e descubra se passou.</p>
+          </div>
+
+          <div class="p-6 space-y-5">
+            <!-- Quantidade de provas -->
+            <div>
+              <label for="qtdProvas" class="block text-sm font-medium text-ufba-muted mb-2">Quantas provas tem a disciplina?</label>
+              <select id="qtdProvas" class="w-full bg-ufba-dark border border-ufba-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-ufba-blue transition-colors appearance-none cursor-pointer">
+                <option value="2">2 provas</option>
+                <option value="3" selected>3 provas</option>
+                <option value="4">4 provas</option>
+                <option value="5">5 provas</option>
+                <option value="6">6 provas</option>
+              </select>
+            </div>
+
+            <!-- Container dinâmico das provas -->
+            <div id="provasContainer" class="space-y-3"></div>
+
+            <button type="button" id="btnCalcularMedia"
+                    class="w-full bg-ufba-blue hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition-colors text-sm">
+              Calcular Média
+            </button>
+
+            <div id="resultadoMedia" class="hidden"></div>
+          </div>
+        </div>
+
+        <!-- CALCULADORA DE FALTAS -->
+        <div class="bg-ufba-card border border-ufba-border rounded-2xl overflow-hidden">
+          <div class="p-6 border-b border-ufba-border">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-ufba-blue/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-ufba-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold">Calculadora de Faltas</h3>
+            </div>
+            <p class="text-ufba-muted text-sm">Descubra quantas faltas você ainda pode ter. Cada dia = 2 aulas de 50min. Presença mínima: 75%.</p>
+          </div>
+
+          <div class="p-6 space-y-5">
+            <div>
+              <label for="cargaHoraria" class="block text-sm font-medium text-ufba-muted mb-2">Carga horária da disciplina (horas)</label>
+              <input type="number" id="cargaHoraria" min="1" max="1000" placeholder="ex: 60"
+                     class="w-full bg-ufba-dark border border-ufba-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-ufba-blue transition-colors">
+            </div>
+
+            <div>
+              <label for="faltasAtuais" class="block text-sm font-medium text-ufba-muted mb-2">Faltas já acumuladas (dias)</label>
+              <input type="number" id="faltasAtuais" min="0" max="500" value="0" placeholder="ex: 3"
+                     class="w-full bg-ufba-dark border border-ufba-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-ufba-blue transition-colors">
+            </div>
+
+            <button type="button" id="btnCalcularFaltas"
+                    class="w-full bg-ufba-blue hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition-colors text-sm">
+              Calcular Faltas
+            </button>
+
+            <div id="resultadoFaltas" class="hidden"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6"><hr class="border-ufba-border"></div>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-ufba-muted">
+      <span>&copy; 2026 Help UFBA &mdash; Rodrigo Gandarela</span>
+      <a href="https://github.com/rodrigogduca/help-ufba" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+        Código Fonte
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
